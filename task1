@@ -1,0 +1,101 @@
+using System;
+
+class Ustroystvo
+{
+    public string name;
+    public string opisanie;
+
+    public Ustroystvo(string name, string opisanie)
+    {
+        this.name = name;
+        this.opisanie = opisanie;
+    }
+
+    public virtual void Sound()
+    {
+        Console.WriteLine("Звук устройства");
+    }
+
+    public virtual void Show()
+    {
+        Console.WriteLine("Название: " + name);
+    }
+
+    public virtual void Desc()
+    {
+        Console.WriteLine("Описание: " + opisanie);
+    }
+}
+
+class Chainik : Ustroystvo
+{
+    public Chainik(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Свистит");
+    }
+}
+
+class Mikrovolnovka : Ustroystvo
+{
+    public Mikrovolnovka(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Жужжит");
+    }
+}
+
+class Avtomobil : Ustroystvo
+{
+    public Avtomobil(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Бип-бип");
+    }
+}
+
+class Parohod : Ustroystvo
+{
+    public Parohod(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Ту-ту");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Chainik c = new Chainik("Чайник", "Кипятит воду");
+        Mikrovolnovka m = new Mikrovolnovka("Микроволновка", "Разогревает еду");
+        Avtomobil a = new Avtomobil("Автомобиль", "Перевозит людей");
+        Parohod p = new Parohod("Пароход", "Плавает по воде");
+
+        c.Show();
+        c.Desc();
+        c.Sound();
+
+        Console.WriteLine();
+
+        m.Show();
+        m.Desc();
+        m.Sound();
+
+        Console.WriteLine();
+
+        a.Show();
+        a.Desc();
+        a.Sound();
+
+        Console.WriteLine();
+
+        p.Show();
+        p.Desc();
+        p.Sound();
+    }
+}
