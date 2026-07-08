@@ -1,0 +1,130 @@
+using System;
+
+class Instrument
+{
+    public string name;
+    public string opisanie;
+
+    public Instrument(string name, string opisanie)
+    {
+        this.name = name;
+        this.opisanie = opisanie;
+    }
+
+    public virtual void Sound()
+    {
+        Console.WriteLine("Звук инструмента");
+    }
+
+    public virtual void Show()
+    {
+        Console.WriteLine("Название: " + name);
+    }
+
+    public virtual void Desc()
+    {
+        Console.WriteLine("Описание: " + opisanie);
+    }
+
+    public virtual void History()
+    {
+        Console.WriteLine("История неизвестна");
+    }
+}
+
+class Skripka : Instrument
+{
+    public Skripka(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Скрип-скрип");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Скрипка появилась в XVI веке.");
+    }
+}
+
+class Trombon : Instrument
+{
+    public Trombon(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Бууу");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Тромбон известен с XV века.");
+    }
+}
+
+class Ukulele : Instrument
+{
+    public Ukulele(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Дзынь");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Укулеле появилась на Гавайях.");
+    }
+}
+
+class Violonchel : Instrument
+{
+    public Violonchel(string name, string opisanie) : base(name, opisanie) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Вууу");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Виолончель появилась в XVI веке.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Skripka s = new Skripka("Скрипка", "Смычковый инструмент");
+        Trombon t = new Trombon("Тромбон", "Духовой инструмент");
+        Ukulele u = new Ukulele("Укулеле", "Маленькая гитара");
+        Violonchel v = new Violonchel("Виолончель", "Большой смычковый инструмент");
+
+        s.Show();
+        s.Desc();
+        s.Sound();
+        s.History();
+
+        Console.WriteLine();
+
+        t.Show();
+        t.Desc();
+        t.Sound();
+        t.History();
+
+        Console.WriteLine();
+
+        u.Show();
+        u.Desc();
+        u.Sound();
+        u.History();
+
+        Console.WriteLine();
+
+        v.Show();
+        v.Desc();
+        v.Sound();
+        v.History();
+    }
+}

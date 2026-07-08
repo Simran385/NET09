@@ -1,0 +1,58 @@
+using System;
+
+abstract class Worker
+{
+    public abstract void Print();
+}
+
+class President : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Президент управляет компанией.");
+    }
+}
+
+class Security : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Охранник охраняет объект.");
+    }
+}
+
+class Manager : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Менеджер работает с клиентами.");
+    }
+}
+
+class Engineer : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Инженер разрабатывает проекты.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Worker w;
+
+        w = new President();
+        w.Print();
+
+        w = new Security();
+        w.Print();
+
+        w = new Manager();
+        w.Print();
+
+        w = new Engineer();
+        w.Print();
+    }
+}
